@@ -15,7 +15,7 @@ route.post("/create", create);
 route.get("/getall", getAll); //for admin (to display alll the types)
 route.get("/display-active/", displayActive); //for users (to hide inactive mediation types)
 route.get("/getone/:id", getOne);
-route.put("/update/:id", update);
+route.patch("/update/:id", update);
 route.delete("/delete/:id", deleteMeditationTypes);
 
 //ADMIN DASHBOARD

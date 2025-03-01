@@ -13,7 +13,7 @@ const route = express.Router();
 
 route.post("/register", create);
 route.post("/login", getOne);
-route.put("/editProfile/:id", update);
+route.patch("/editProfile/:id", update);
 route.get("/getall", getAll);
 
 //ADMIN DASHBOARD ROUTES
