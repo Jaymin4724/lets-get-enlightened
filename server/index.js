@@ -46,5 +46,4 @@ app.use("/api/email", emailRoute);
 app.use("/api/challengesActivity", challengesActivityRoute);
 app.use("/api/challengesRequest", challengesRequestRoute);
 app.use("/api/membershipPayment", membershipPaymentRoute);
-
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
