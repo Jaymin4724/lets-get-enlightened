@@ -1,0 +1,7 @@
+.ProfileMiddleComp {
+    margin: 80px 10px 10px 250px;
+    min-height: calc(100vh - 90px);
+    width: calc(100vw - 260px);
+    background-color: whitesmoke;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+}

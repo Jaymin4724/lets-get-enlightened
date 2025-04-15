@@ -1,0 +1,92 @@
+@import url('https://fonts.googleapis.com/css2?family=Afacad:wght@500&family=Josefin+Sans&family=Lato:wght@300;400&display=swap');
+
+.SliderContainer {
+    max-width: 95vw;
+    margin: 20px auto 30px auto;
+    padding: 30px 20px 40px 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+}
+
+.SliderContainer.dark {
+    background-color: #111;
+    color: white;
+}
+
+.SliderContainerHeading {
+    padding-left: 20px;
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 40px;
+    font-weight: bold;
+}
+
+.SliderItem {
+    padding: 10px;
+    text-align: center;
+}
+
+.SliderItem:hover{
+    transform: scale(1.02);
+}
+
+
+.SliderItemImg {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+}
+
+.SliderItemImg.dark {
+    box-shadow: 0px 0px 3px rgba(255, 255, 255, 1) !important;
+}
+
+.SliderItemDetails {
+    margin-top: 10px;
+}
+
+.SliderItemName {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.SliderItemDesc {
+    font-size: 14px;
+    color: #666;
+}
+
+.SliderItemDesc.dark {
+    color: whitesmoke;
+}
+
+.slick-prev,
+.slick-next {
+    display: none !important;
+}
+
+.slick-dots {
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+.slick-dots li {
+    margin: 0 2px;
+    padding: 10px 0 0 10px;
+}
+
+.slick-dots li button {
+    width: 5px;
+    height: 5px;
+    background-color: #666;
+    display: block;
+    border: none;
+    border-radius: 100%;
+    text-indent: -9999px;
+}
+
+.slick-dots li.slick-active button {
+    background-color: #222;
+}

@@ -1,0 +1,69 @@
+ @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+
+ .ProfileMenuBar {
+     position: fixed;
+     left: 0;
+     top: 0;
+     z-index: 999;
+     height: 100%;
+     background-color: white;
+     font-size: larger;
+ }
+
+ .MenuButtons {
+     display: flex;
+     flex-direction: column;
+     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+     gap: 10px;
+     height: 100%;
+     padding: 10px;
+     padding-right: 20px;
+     padding-top: 37%;
+ }
+
+ .MenuButtons.dark {
+     background-color: #222;
+ }
+
+ .MenuButton {
+     color: black;
+     cursor: pointer;
+     transition: all ease 0.5s;
+     padding: 5px 12px;
+     font-family: 'Poppins', sans-serif;
+     text-decoration: none;
+ }
+
+ .MenuButton:hover {
+     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+     background-color: #333;
+     color: white;
+ }
+
+
+ .MenuButton.active {
+     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+     background-color: #333;
+     color: white;
+ }
+
+ .MenuButton.dark {
+     color: white;
+ }
+
+ .MenuButton.dark.active {
+     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+     background-color: black;
+     color: white;
+ }
+
+ .MenuButton.dark:hover {
+     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+     background-color: black;
+     color: white;
+ }
+
+ .ProfileMenuBar button{
+    border: none;
+    background-color: white;
+ }

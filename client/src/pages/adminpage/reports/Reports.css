@@ -1,0 +1,65 @@
+.reports {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    color: black;
+    padding: 10px 10px;
+}
+
+.reports.dark {
+    background-color: #333;
+    color: white;
+}
+
+.report {
+    font-weight: 600;
+    display: flex;
+    flex-direction: column;
+    padding: 15px 20px 18px 20px;
+    gap: 5px;
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    color: black;
+    /* font-size: large; */
+    font-size: 18px;
+    transition: all ease-in 0.1s;
+}
+
+.report:hover {
+    cursor: pointer;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 1);
+}
+
+.ReportDetails {
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.ReportDetails>* {
+    padding-left: 10px;
+}
+
+.DatePicker {
+    padding: 0;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    font-size: smaller;
+    gap: 10px;
+}
+
+.DatePicker input {
+    padding-left: 10px;
+}
+
+.DownloadReport {
+    padding: 3px 15px;
+    border: none;
+    background-color: #333;
+    color: white;
+    border-radius: 3px;
+    /* font-size: 15px; */
+}

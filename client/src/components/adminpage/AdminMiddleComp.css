@@ -1,0 +1,16 @@
+.AdminMiddleComp {
+    margin-top: 80px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    margin-left: 250px;
+    width: calc(100vw - 260px);
+    min-height: calc(100vh - 90px);
+    background-color: whitesmoke;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+}
+
+.AdminMiddleComp.dark {
+    background-color: #333;
+    /* for admin page */
+    /* background-color: #B3B792; */
+}

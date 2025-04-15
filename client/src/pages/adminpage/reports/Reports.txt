@@ -1,0 +1,399 @@
+import React, { useContext, useEffect, useState } from "react";
+import AdminMiddleComp from "../../../components/adminpage/AdminMiddleComp";
+import axios from "axios";
+import "./Reports.css";
+import {
+  Document,
+  Page,
+  Text,
+  View,
+  StyleSheet,
+  PDFDownloadLink,
+  Image,
+} from "@react-pdf/renderer";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faDownload } from "@fortawesome/free-solid-svg-icons";
+// import toast from "react-hot-toast";
+// toast.error("First name and last name should contain alphabets only!", {
+//   duration: 3000,
+//   position: "top-center",
+//   style: {
+//     backgroundColor: "#333",
+//     color: "white",
+//   },
+// });
+// return;
+
+export default function Reports() {
+  const themeContext = useContext(ThemeContext);
+  const questions = [
+    "Joined Meditators in Our Website",
+    "Purchased Membership",
+    "Total Earnings",
+    "Overall Mood of Users",
+    "Most Frequently Performed Meditation Types",
+    "Recently Used Meditation Challenges Data",
+  ];
+  const [startDate, setStartDate] = useState(null);
+  const [endDate, setEndDate] = useState(null);
+  const [activeReportIndex, setActiveReportIndex] = useState(0);
+  const [joinedMeditatorsData, setJoinedMeditatorsData] = useState([]); //0
+  // const [membershipData, setMembershipData] = useState([]); //1
+  // const [EarningsData, setEarningsData] = useState([]); //2
+  const [overallMoodData, setOverallMoodData] = useState([]); //3
+  const [meditationTypes, setMeditationTypes] = useState([]); //4
+  const [challenges, setChallenges] = useState([]); //5
+  useEffect(() => {
+    fetchData();
+  }, []);
+
+  async function fetchData() {
+    try {
+      const [
+        joinedMeditatorsResponse,
+        overallMoodResponse,
+        meditationTypesResponse,
+        challengesResponse,
+      ] = await Promise.all([
+        axios.get("http://localhost:8000/api/reportsGetAll"),
+        axios.get("http://localhost:8000/api/mood/reportGetAll"),
+        axios.get("http://localhost:8000/api/meditationActivity/reportGetAll"),
+        axios.get("http://localhost:8000/api/challengesActivity/getAllData"),
+      ]);
+
+      setJoinedMeditatorsData(joinedMeditatorsResponse.data);
+      setOverallMoodData(overallMoodResponse.data);
+      setMeditationTypes(meditationTypesResponse.data);
+      setChallenges(challengesResponse.data);
+    } catch (error) {
+      console.error(error);
+    }
+  }
+
+  const handleStartDateChange = (date) => {
+    setStartDate(date);
+  };
+
+  const handleEndDateChange = (date) => {
+    setEndDate(date);
+  };
+
+  function fetchJoinedMeditators(startDate, endDate) {
+    const filteredData = joinedMeditatorsData.filter((item) => {
+      const regDate = new Date(item.reg_date);
+      return regDate >= startDate && regDate <= endDate;
+    });
+    setJoinedMeditatorsData(filteredData);
+  }
+
+  function fetchMeditationTypes() {
+    const filteredData = meditationTypes;
+    filteredData.sort((a, b) => b.duration - a.duration);
+    setMeditationTypes(filteredData);
+  }
+
+  function fetchPurchasedMembership() {}
+
+  function fetchTotalEarnings() {}
+
+  function fetchOverallMood(startDate, endDate) {
+    const filteredData = overallMoodData.filter((item) => {
+      const timestamp = new Date(item.timestamp);
+      return timestamp >= startDate && timestamp <= endDate;
+    });
+    setOverallMoodData(filteredData);
+  }
+
+  function fetchMeditationChallenge() {}
+
+  return (
+    <div>
+      <AdminMiddleComp>
+        <div className={`reports ${themeContext.theme}`}>
+          {questions.map((question, index) => (
+            <div
+              className="report"
+              key={index}
+              onClick={() => {
+                setActiveReportIndex(index);
+              }}
+            >
+              <div className="title" style={{ flex: "1" }}>
+                {question}
+              </div>
+              <div className="DatePickerReports">
+                {activeReportIndex === index && index !== 4 && (
+                  <>
+                    <DatePicker
+                      selected={startDate}
+                      onChange={handleStartDateChange}
+                      selectsStart
+                      startDate={startDate}
+                      endDate={endDate}
+                      placeholderText="Start Date"
+                      className="DatePicker"
+                    />
+                    <DatePicker
+                      selected={endDate}
+                      onChange={handleEndDateChange}
+                      selectsEnd
+                      startDate={startDate}
+                      endDate={endDate}
+                      minDate={startDate}
+                      placeholderText="End Date"
+                      className="DatePicker"
+                    />
+                  </>
+                )}
+              </div>
+              <div>
+                {activeReportIndex === index && (
+                  <>
+                    <button
+                      className="DownloadReport"
+                      onClick={() => {
+                        switch (index) {
+                          case 0:
+                            fetchJoinedMeditators(startDate, endDate);
+                            break;
+                          case 1:
+                            fetchPurchasedMembership(startDate, endDate);
+                            break;
+                          case 2:
+                            fetchTotalEarnings(startDate, endDate);
+                            break;
+                          case 3:
+                            fetchOverallMood(startDate, endDate);
+                            break;
+                          case 4:
+                            fetchMeditationTypes();
+                            break;
+                          case 5:
+                            fetchMeditationChallenge(startDate, endDate);
+                            break;
+                          default:
+                            break;
+                        }
+                      }}
+                    >
+                      {index !== 4 && (!startDate || !endDate) ? (
+                        <></>
+                      ) : (
+                        <PDFDownloadLink
+                          document={
+                            <Document>
+                              <Page style={styles.page}>
+                                <View style={styles.horizontalLine} />
+                                <view style={styles.title}>
+                                  <view>
+                                    <Image
+                                      style={styles.image}
+                                      src="https://i.ibb.co/G9M3VPt/logo-Black.png"
+                                    />
+                                  </view>
+                                  <view>
+                                    <Text style={styles.titleheading}>
+                                      Let's Get Enlightened
+                                    </Text>
+                                    <Text style={styles.titlesubheading}>
+                                      Meditate, Elevate, Rediate
+                                    </Text>
+                                  </view>
+                                </view>
+                                <View style={styles.horizontalLine} />
+                                {index !== 4 && (
+                                  <view style={styles.date}>
+                                    <Text>To : {endDate.toDateString()}</Text>
+                                    <Text>
+                                      From : {startDate.toDateString()}
+                                    </Text>
+                                  </view>
+                                )}
+                                <View>
+                                  {index === 0 && (
+                                    <View>
+                                      <Text style={styles.heading}>
+                                        Joined Meditators in Our Website
+                                      </Text>
+                                      <View style={styles.table}>
+                                        <View style={styles.tableRow}>
+                                          <Text
+                                            style={[
+                                              styles.tableCell,
+                                              styles.headerCell,
+                                              styles.no,
+                                            ]}
+                                          >
+                                            No.
+                                          </Text>
+                                          <Text
+                                            style={[
+                                              styles.tableCell,
+                                              styles.headerCell,
+                                              styles.name,
+                                            ]}
+                                          >
+                                            Name
+                                          </Text>
+                                          <Text
+                                            style={[
+                                              styles.tableCell,
+                                              styles.headerCell,
+                                              styles.mail,
+                                            ]}
+                                          >
+                                            Email ID
+                                          </Text>
+                                          <Text
+                                            style={[
+                                              styles.tableCell,
+                                              styles.headerCell,
+                                              styles.dob,
+                                            ]}
+                                          >
+                                            DOB
+                                          </Text>
+                                          <Text
+                                            style={[
+                                              styles.tableCell,
+                                              styles.headerCell,
+                                              styles.membershipPlan,
+                                            ]}
+                                          >
+                                            Membership Plan
+                                          </Text>
+                                          <Text
+                                            style={[
+                                              styles.tableCell,
+                                              styles.headerCell,
+                                              styles.regDate,
+                                            ]}
+                                          >
+                                            Registration Date
+                                          </Text>
+                                        </View>
+                                        {joinedMeditatorsData.map(
+                                          (Meditator, index) => (
+                                            <View
+                                              key={index}
+                                              style={[
+                                                styles.tableRow,
+                                                index % 2 === 0
+                                                  ? styles.evenRow
+                                                  : styles.oddRow,
+                                              ]}
+                                            >
+                                              <Text
+                                                style={[
+                                                  styles.tableCell,
+                                                  styles.no,
+                                                ]}
+                                              >
+                                                {index + 1}
+                                              </Text>
+                                              <Text
+                                                style={[
+                                                  styles.tableCell,
+                                                  styles.name,
+                                                ]}
+                                              >
+                                                {Meditator.fname}{" "}
+                                                {Meditator.lname}
+                                              </Text>
+                                              <Text
+                                                style={[
+                                                  styles.tableCell,
+                                                  styles.mail,
+                                                ]}
+                                              >
+                                                {Meditator.email}
+                                              </Text>
+                                              <Text
+                                                style={[
+                                                  styles.tableCell,
+                                                  styles.dob,
+                                                ]}
+                                              >
+                                                {new Date(
+                                                  Meditator.dob
+                                                ).toLocaleDateString()}
+                                              </Text>
+                                              <Text
+                                                style={[
+                                                  styles.tableCell,
+                                                  styles.membershipPlan,
+                                                ]}
+                                              >
+                                                {Meditator.membershipPlan}
+                                              </Text>
+                                              <Text
+                                                style={[
+                                                  styles.tableCell,
+                                                  styles.regDate,
+                                                ]}
+                                              >
+                                                {new Date(
+                                                  Meditator.reg_date
+                                                ).toLocaleDateString()}
+                                              </Text>
+                                            </View>
+                                          )
+                                        )}
+                                      </View>
+                                    </View>
+                                  )}
+                                  {index === 1 && (
+                                    <Text>
+                                      This is the PDF content for case 1.
+                                    </Text>
+                                  )}
+                                  {index === 2 && (
+                                    <Text>
+                                      This is the PDF content for case 2.
+                                    </Text>
+                                  )}
+                                  {index === 3 && (
+                                    <Text>
+                                      This is the PDF content for case 3.
+                                    </Text>
+                                  )}
+                                  {index === 4 && (
+                                    <Text>
+                                      This is the PDF content for case 4.
+                                    </Text>
+                                  )}
+                                  {index === 5 && (
+                                    <Text>
+                                      This is the PDF content for case 5.
+                                    </Text>
+                                  )}
+                                  {index === 6 && (
+                                    <Text>
+                                      This is the PDF content for case 6.
+                                    </Text>
+                                  )}
+                                </View>
+                              </Page>
+                            </Document>
+                          }
+                          fileName="DynamicReport.pdf"
+                        >
+                          <FontAwesomeIcon
+                            icon={faDownload}
+                            title="Export PDF"
+                            style={{ color: "black" }}
+                          />
+                        </PDFDownloadLink>
+                      )}
+                    </button>
+                  </>
+                )}
+              </div>
+            </div>
+          ))}
+        </div>
+      </AdminMiddleComp>
+    </div>
+  );
+}
+

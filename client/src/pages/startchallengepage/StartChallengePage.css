@@ -1,0 +1,62 @@
+.StartChallenge {
+    margin: 80px 10px 0px 10px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: calc(100vw - 20px);
+    min-height: calc(100vh - 90px);
+    gap: 15px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
+    position: relative;
+    font-family: 'Josefin Sans', sans-serif;
+    border: 2px solid black;
+}
+
+.StartChallenge.dark {
+    background-color: #333;
+    color: white;
+    border: 2px solid whitesmoke;
+}
+
+.StartChallenge p {
+    font-size: larger;
+    max-width: 650px;
+    text-align: center;
+}
+
+.ChallengeButtons {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+
+.ChallengeButtons Button {
+    flex: 1;
+    padding: 10px 20px;
+    font-size: larger;
+    border: none;
+    border-radius: 8px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+    background-color: #333;
+    color: white;
+}
+
+.ChallengeButtons.dark Button {
+    background-color: black;
+}
+
+.ChallengeButtons Button:hover {
+    background-color: black;
+}
+
+.ChallengeButtons.dark Button {
+    background-color: whitesmoke;
+    color: black;
+}
+
+.ChallengeButtons.dark Button:hover {
+    background-color: #111;
+    color: white;
+}

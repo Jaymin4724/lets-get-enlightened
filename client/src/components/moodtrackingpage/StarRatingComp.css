@@ -1,0 +1,10 @@
+.starcontainer {
+  font-size: 30px;
+  color: #B6BBC4;
+  cursor: pointer;
+  transition: color 0.5s ease;
+}
+
+.starcontainer:hover {
+  color: gold;
+}

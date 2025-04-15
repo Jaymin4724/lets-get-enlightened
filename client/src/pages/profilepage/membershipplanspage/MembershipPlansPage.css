@@ -1,0 +1,117 @@
+.MembershipPlansContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    gap: 10px;
+    min-height: 86vh;
+    padding: 15px 35px;
+}
+
+.MembershipPlansContainer.dark {
+    background-color: #222;
+}
+
+.MembershipPlansContainer h2 {
+    font-family: 'Josefin Sans', sans-serif;
+    font-weight: bold;
+}
+
+.MembershipPlansContainer.dark h2 {
+    color: white;
+}
+
+.MembershipPlans {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.MembershipPlan {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    border-radius: 30px;
+    background-color: #333;
+    color: white;
+    flex: 1;
+    align-items: center;
+    max-width: 380px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
+    padding: 55px 15px;
+}
+
+.MembershipPlan.dark {
+    background-color: whitesmoke;
+    color: black;
+}
+
+.MembershipPlanDesc {
+    text-align: center;
+}
+
+.MembershipPlanDetails {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3px;
+}
+
+.MembershipPlanType {
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.MembershipPlanName {
+    font-size: 18px;
+    font-weight: bold;
+    color: white;
+}
+
+.MembershipPlanName.dark {
+    color: black;
+}
+
+.MembershipPlanDuration {
+    color: beige;
+}
+
+.MembershipPlanDuration.dark {
+    color: #561C24;
+}
+
+.MembershipPlanPrice {
+    font-size: 20px;
+    font-weight: bold;
+    color: beige;
+}
+
+.MembershipPlanPrice.dark {
+    color: #561C24;
+}
+
+
+.SubscribeButton {
+    text-decoration: none;
+    color:black;
+    background-color: whitesmoke;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 17px;
+    font-weight: 500;
+    transition: background-color 0.3s ease;
+}
+
+.SubscribeButton.dark {
+    background-color: #111;
+    color: whitesmoke;
+}
+
+.MembershipPlan:hover {
+    transform: scale(1.02);
+}

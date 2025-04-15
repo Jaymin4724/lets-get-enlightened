@@ -1,0 +1,42 @@
+.LoginForm {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.LoginForm label {
+    font-weight: bold;
+    color: black;
+}
+
+.LoginInputBox {
+    padding: 10px;
+    border-radius: 8px;
+    border: none;
+    outline: none;
+    width: 100%;
+    background-color: whitesmoke;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+}
+
+.LoginInputBox:focus {
+    background-color: white;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.5);
+}
+
+
+.LoginPasswordInputContainer {
+    position: relative;
+}
+
+.LoginTogglePassword {
+    text-decoration: none;
+    position: absolute;
+    transform: translateY(-50%);
+    top: 50%;
+    right: 10px;
+    cursor: pointer;
+    color: black;
+    font-size: 14px;
+    font-weight: 500;
+}

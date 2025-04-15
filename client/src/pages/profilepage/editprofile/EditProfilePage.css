@@ -1,0 +1,98 @@
+.EditProfile {
+    background-color: white;
+}
+
+.EditProfile.dark {
+    background-color: #222;
+}
+
+.EditProfileHeading {
+    padding: 15px 0px 0px 20px;
+    margin: 0;
+    font-family: 'Josefin Sans', sans-serif;
+}
+
+.EditProfileHeading.dark {
+    color: white;
+}
+
+.EditProfileForm {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding: 0px 20px 15px 20px;
+    margin: 0;
+}
+
+.EditProfileForm label {
+    font-weight: 500;
+}
+
+.EditProfileInputBox {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 10px 20px;
+    border-radius: 8px;
+    width: 100%;
+    background-color: whitesmoke;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+}
+
+.EditProfileInputBox.dark {
+    background-color: whitesmoke;
+}
+
+.EditProfileInputBox label {
+    flex: 1;
+}
+
+.EditProfileInputBox input,
+.EditProfileInputBox select {
+    flex: 5;
+    border: none;
+    border-radius: 3px;
+    padding: 5px 10px;
+    outline: none;
+    background-color: white;
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
+    width: 100%;
+    border: none;
+    outline: none;
+}
+
+.EditProfile.dark input,
+.EditProfile.dark select {
+    background-color: white;
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.5);
+}
+
+.SaveEditButtonContainer {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+}
+
+.SaveEditButton {
+    font-weight: 500;
+    padding: 10px 20px;
+    border-radius: 8px;
+    background-color: #333;
+    color: white;
+    border: none;
+    transition: background-color 0.3s ease;
+}
+
+.SaveEditButton:hover {
+    background-color: black;
+}
+
+.SaveEditButton.dark {
+    background-color: whitesmoke;
+    color: #333;
+}
+
+.SaveEditButton.dark:hover {
+    background-color: black;
+    color: white;
+}

@@ -1,0 +1,122 @@
+.ChallengeMeditator {
+    display: flex;
+    flex-direction: column;
+    background-color: #B4B4B8;
+    margin: 90px 30px 20px 20px;
+    gap: 15px;
+    padding: 40px 70px 70px 70px;
+    min-height: calc(100vh - 110px);
+    width: calc(100vw - 40px);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.ChallengeMeditator.dark {
+    background-color: #222;
+    color: white;
+}
+
+.ChallengeMeditatorHeading {
+    text-align: center;
+    font-family: 'Josefin Sans', sans-serif;
+}
+
+.SearchBar {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    position: relative;
+}
+
+.SearchBar input {
+    padding: 10px 40px;
+    outline: none;
+    border: none;
+    font-size: 18px;
+    flex: 1;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.SearchButtonChMed {
+    position: absolute;
+    left: 10px;
+    top: 16px;
+}
+
+.SearchButtonChMed {
+    color: black;
+}
+
+.SearchBar button {
+    border-radius: 6px;
+    border: none;
+    background-color: #222;
+    color: white;
+    padding: 15px 70px;
+    font-size: 20px;
+}
+
+.SearchBar.dark button {
+    background-color: #555;
+}
+
+.SearchBar button:hover {
+    background-color: black;
+}
+
+.SearchBar.dark button:hover {
+    background-color: whitesmoke;
+    color: black;
+}
+
+.MeditatorsMain {
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
+    background-color: white;
+    color: black;
+    gap: 15px;
+    border-radius: 6px;
+}
+
+
+.Meditators {
+    display: flex;
+    flex-direction: row !important;
+    gap: 10px;
+}
+
+.MeditatorsDetails {
+    display: flex;
+    flex-direction: row;
+    background-color: #C7C8CC;
+    gap: 5px;
+    padding: 10px 5px;
+    flex: 1;
+}
+
+.MeditatorsUID {
+    font-weight: bold;
+    flex: 1;
+}
+
+.MeditatorsName {
+    text-transform: capitalize;
+    flex: 2;
+}
+
+.MeditatorsDetails.dark {
+    background-color: #333;
+    color: white;
+}
+
+.RequestButton button {
+    padding: 10px;
+    background-color: #666;
+    color: white;
+    border: none;
+    border-radius: 5px;
+}
+
+.RequestButton button:hover {
+    background-color: black;
+}

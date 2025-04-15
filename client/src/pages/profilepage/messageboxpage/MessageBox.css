@@ -1,0 +1,21 @@
+.MessageBoxContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    min-height: calc(100vh - 88px);
+}
+
+.MessageBoxContainer.dark {
+    background-color: #222;
+}
+
+.Messages {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin: 0px 15px;
+}
+
+.Messages.dark {
+    background-color: #222;
+}

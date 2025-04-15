@@ -1,0 +1,16 @@
+.Affirmations {
+    background-color: white;
+    padding: 150px 60px 80px 60px;
+}
+
+.Affirmations h1 {
+    text-align: center;
+    font-weight: lighter;
+    padding: 10px 100px;
+    font-family: 'Diphylleia', serif;
+}
+
+.Affirmations.dark {
+    background-color: #333;
+    color: white;
+}

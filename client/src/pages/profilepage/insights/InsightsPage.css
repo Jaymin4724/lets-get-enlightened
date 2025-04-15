@@ -1,0 +1,138 @@
+.PremiumMemberDetails {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    padding: 10px;
+    background-color: white;
+    width: 100%;
+}
+
+.PremiumMemberDetails.dark {
+    background-color: #333;
+}
+
+.PremiumMemberContainer {
+    /* background-image: linear-gradient(rgb(180, 180, 184),
+    rgb(199, 200, 204),
+    rgb(227, 225, 217)) */
+    background-image: linear-gradient(rgb(180, 180, 184),
+            rgb(199, 200, 204),
+            rgb(227, 225, 217));
+    border-radius: 5px;
+    padding: 10px;
+    cursor: pointer;
+    flex: 1;
+    text-align: center;
+}
+
+.PremiumMemberContainer:hover {
+    transform: scale(1.02);
+}
+
+.ProfileInsights {
+    display: flex;
+    flex-direction: column;
+    padding: 10px 10px 10px 10px;
+    min-height: calc(100vh - 90px);
+    gap: 10px;
+    background-color: white;
+}
+
+.ProfileInsights.dark {
+    background-color: #333;
+    color: white;
+}
+
+.MainContainerInsights {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+
+/* .MainContainerInsights.dark
+{
+} */
+
+.ContainerInsights {
+    flex: 1;
+    /* background-color: #999; */
+    background-image: linear-gradient(rgb(180, 180, 184),
+            rgb(199, 200, 204),
+            rgb(227, 225, 217));
+    color: black;
+    padding: 5px 30px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.1s ease-in;
+    cursor: pointer;
+}
+
+.ContainerInsights:hover {
+    transform: scale(1.02);
+}
+
+/* .ContainerInsights.dark{
+} */
+.InsightsIcon {
+    font-size: 60px;
+}
+
+.InsightsHeading {
+    font-size: large;
+    font-weight: 200;
+}
+
+.InsightsCounts {
+    display: flex;
+    font-size: 40px;
+    font-weight: 500;
+}
+
+.ContainerInsights table {
+    margin-top: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    background-color: #fff;
+}
+
+.ContainerInsights.dark table {
+    background-color: #222;
+    color: whitesmoke;
+}
+
+
+.ContainerInsights th,
+.ContainerInsights td {
+    padding: 12px;
+    padding-left: 20px;
+    text-align: left;
+}
+
+.ContainerInsights th {
+    background-color: #333;
+    color: white;
+}
+
+.ContainerInsights.dark th {
+    background-color: #333;
+    color: white;
+}
+
+.ContainerInsights tr:nth-child(even) {
+    background-color: #C7C8CC;
+}
+
+.ContainerInsights.dark tr:nth-child(even) {
+    background-color: #333;
+}
+
+.ContainerInsights tr:hover {
+    background-color: #555;
+    color: white;
+}
+
+.ContainerInsights.dark tr:hover {
+    background-color: black;
+}

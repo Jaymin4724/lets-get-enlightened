@@ -1,0 +1,210 @@
+.TableContainer {
+    display: flex;
+    flex-direction: column;
+    background-color: #f8f8f8;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    overflow-x: scroll;
+}
+
+
+.TableContainer::-webkit-scrollbar {
+    height: 5px;
+}
+
+.TableContainer::-webkit-scrollbar-track {
+    background-color: white;
+}
+
+.TableContainer::-webkit-scrollbar-thumb {
+    background-color: #444;
+}
+
+.TableContainer.dark {
+    background-color: #222;
+    /* for admin page */
+    /* background-color: #B3B792; */
+}
+
+.AdminTable {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    background-color: #fff;
+}
+
+.TableContainer.dark .AdminTable {
+    background-color: #222;
+    color: whitesmoke;
+    /* for admin page */
+    /* background-color: #B3B792; */
+    /* color: black; */
+}
+
+.AdminHeading {
+    text-align: center;
+    font-family: 'Josefin Sans', sans-serif;
+    padding: 12px 3px 0px 3px;
+    background-color: #333;
+    color: white;
+    margin: 0;
+    /* for admin page */
+    /* background-color: #5E604B; */
+    /* color: white; */
+}
+
+.AdminHeading.dark {
+    color: whitesmoke;
+    background-color: black;
+    /* for admin page */
+    /* color: whitesmoke; */
+    /* background-color: #5E604B; */
+}
+
+.AdminTable th,
+.AdminTable td {
+    padding: 12px;
+    text-align: left;
+}
+
+.AdminTable th {
+    background-color: #f2f2f2;
+    /* for admin page */
+    /* background-color: #F9F6F1; */
+}
+
+.TableContainer.dark th {
+    background-color: #333;
+    color: white;
+    /* for admin page */
+    /* background-color: #FEFAE0; */
+    /* color: black; */
+}
+
+.TableContainer tr:nth-child(even) {
+    background-color: #f9f9f9;
+    /* for admin page */
+    /* background-color: #F9F6F1; */
+}
+
+.TableContainer.dark tr:nth-child(even) {
+    background-color: #333;
+    /* for admin page */
+    /* background-color: #FEFAE0; */
+    /* color: black; */
+}
+
+.TableContainer tr:hover {
+    background-color: #B4B4B3;
+    /* for admin page */
+    /* background-color: #D6D4C8; */
+}
+
+.TableContainer.dark tr:hover {
+    background-color: black;
+    /* for admin page */
+    /* background-color: #283618; */
+    /* color: #FEFAE0; */
+}
+
+.AddIcon {
+    height: 25px;
+    width: 25px;
+}
+
+.TableAddButton {
+    border: none;
+    padding: 10px 20px 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    font-weight: 500;
+    background-color: #333;
+    color: white;
+    /* for admin page */
+    /* background-color: #E8D8C4; */
+    /* color: black; */
+}
+
+.TableAddButton:hover {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    background-color: black;
+    /* for admin page */
+    /* background-color: #B49177; */
+    /* color: white; */
+}
+
+.TableAddButton.dark {
+    background-color: whitesmoke;
+    color: black;
+    /* for admin page */
+    /* background-color: #5E604B; */
+    /* color: white; */
+}
+
+.TableAddButton.dark:hover {
+    background-color: black;
+    color: white;
+    /* for admin page */
+    /* background-color: #283618; */
+    /* color: white; */
+}
+
+.EditDeleteIcon {
+    height: 20px;
+    width: 20px;
+    color: black;
+}
+
+.EditDeleteIcon.dark {
+    color: white;
+}
+
+/* for admin page */
+/* .EditDeleteIcon.dark:hover {
+    color: #F9F6F1;
+} */
+
+
+textarea {
+    padding-left: 5px;
+    width: 200px;
+    /* Set the width as per your requirement */
+    height: 100px;
+    /* Set the height as per your requirement */
+    overflow-y: scroll;
+    /* Enable vertical scrollbar */
+    scrollbar-width: thin;
+    /* Set the width of the scrollbar */
+    scrollbar-color: gray white;
+    /* Set the color of the scrollbar */
+}
+
+/* Style for Webkit browsers (Chrome, Safari) */
+textarea::-webkit-scrollbar {
+    width: 8px;
+    /* Set the width of the scrollbar */
+}
+
+/* Style for Webkit browsers (Chrome, Safari) */
+textarea::-webkit-scrollbar-track {
+    background: white;
+    /* Set the background color of the track */
+}
+
+/* Style for Webkit browsers (Chrome, Safari) */
+textarea::-webkit-scrollbar-thumb {
+    background-color: gray;
+    /* Set the color of the scrollbar thumb */
+    border-radius: 4px;
+    /* Set the border radius of the scrollbar thumb */
+}
+
+.DownloadIcon {
+    height: 25px;
+    width: 25px;
+    color: black;
+    flex: 1;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.DownloadIcon.dark {
+    color: whitesmoke;
+}

@@ -1,0 +1,65 @@
+.LeaderboardContainer {
+  display: flex;
+  flex-direction: column;
+  background-color: #f8f8f8;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+.LeaderboardContainer.dark {
+  background-color: #222;
+}
+
+.LeaderboardContainer table {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  background-color: #fff;
+}
+
+.LeaderboardContainer.dark table {
+  background-color: #222;
+  color: whitesmoke;
+}
+
+.LeaderboardContainer h1 {
+  text-align: center;
+  font-family: 'Josefin Sans', sans-serif;
+  background-color: #333;
+  color: white;
+  padding: 12px 3px 0px 3px;
+}
+
+.LeaderboardContainer.dark h1 {
+  color: whitesmoke;
+  background-color: black;
+}
+
+.LeaderboardContainer th,
+.LeaderboardContainer td {
+  padding: 12px;
+  padding-left: 20px;
+  text-align: left;
+}
+
+.LeaderboardContainer th {
+  background-color: #f2f2f2;
+}
+
+.LeaderboardContainer.dark th {
+  background-color: #333;
+  color: white;
+}
+
+.LeaderboardContainer tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.LeaderboardContainer.dark tr:nth-child(even) {
+  background-color: #333;
+}
+
+.LeaderboardContainer tr:hover {
+  background-color: #B4B4B3;
+}
+
+.LeaderboardContainer.dark tr:hover {
+  background-color: black;
+}

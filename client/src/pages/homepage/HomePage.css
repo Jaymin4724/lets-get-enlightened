@@ -1,0 +1,14 @@
+.HomePage {
+    display: flex;
+    flex-direction: column;
+}
+
+.CompContainer {
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+}
+
+.CompContainer.dark {
+    background-color: #333;
+}

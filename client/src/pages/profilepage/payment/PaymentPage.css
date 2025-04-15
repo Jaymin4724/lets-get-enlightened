@@ -1,0 +1,82 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.PaymentPageParent {
+    min-height: 100vh;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: whitesmoke;
+}
+
+.PaymentPage {
+    margin-top: 70px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    background-color: white;
+    padding: 20px 25px;
+    gap: 15px;
+}
+
+.ContactInfo {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+}
+
+.PaymentMethod {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.CardInfo {
+    display: flex;
+    flex-direction: column;
+}
+
+.CardHolderName {
+    display: flex;
+    flex-direction: column;
+}
+
+.TotalPayment {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.PaymentPageParent input {
+    padding: 5px;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    width: 100%;
+    background-color: whitesmoke;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+}
+
+.PaymentPageParent input:focus {
+    background-color: white;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.5);
+}
+
+.PaymentPageParent button {
+    padding: 8px;
+    border-radius: 8px;
+    background-color: #333;
+    color: white;
+    font-weight: bold;
+    border: none;
+    transition: background-color 0.3s ease;
+    text-align: center;
+    width: 100%;
+}

@@ -1,0 +1,55 @@
+.StartMeditation {
+    margin: 90px 15px 10px 15px;
+    padding: 20px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: calc(100vw - 30px);
+    min-height: calc(100vh - 110px);
+    gap: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
+    position: relative;
+}
+
+.StartMeditation.dark {
+    background-color: #222;
+    color: white;
+}
+
+.MeditationVideo {
+    aspect-ratio: 16/9;
+    padding: 10px;
+    flex: 1;
+}
+
+.MeditationInfo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    flex: 1;
+}
+
+.Finish {
+    margin: 10px;
+}
+
+.FinishButton {
+    padding: 8px 80px;
+    border: none;
+    border-radius: 8px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+    background-color: #333;
+    color: white;
+}
+
+.FinishButton:hover {
+    background-color: black;
+    color: white;
+}
+
+.FinishButton.dark {
+    background-color: whitesmoke;
+    color: black;
+}

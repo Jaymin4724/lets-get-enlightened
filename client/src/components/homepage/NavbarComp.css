@@ -1,0 +1,131 @@
+@import url('https://fonts.googleapis.com/css2?family=Afacad:wght@300&family=Lato&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Diphylleia&family=Salsa&display=swap');
+
+.WebTitleLink {
+    text-decoration: none;
+    color: black;
+}
+
+.WebTitleLink.dark {
+    color: white;
+}
+
+.WebsiteNavbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: white;
+    /* for admin panel */
+    /* background-color: #DBD2C3;  */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 10px 12px 20px;
+    font-size: larger;
+}
+
+.WebsiteNavbar.dark {
+    background-color: #222;
+    color: white;
+    /* for admin page */
+    /* background-color: #283618; */
+    /* color: #DBD2C3; */
+}
+
+.WebsiteTitle {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: 400;
+    font-size: x-large;
+    font-family: 'Salsa', cursive;
+}
+
+.NavbarButtons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    padding: 0px 3px;
+}
+
+.ToastMessage,
+.NavbarButtons button {
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    height: 40px;
+    font-size: 14px;
+    padding: 0px 15px;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+    /* for admin page */
+    /* background-color: #F9F6F1; */
+}
+
+.WebsiteNavbar button:hover {
+    box-shadow: 0 0 5px rgba(0, 0, 0, 1);
+}
+
+.WebsiteNavbar.dark button:hover {
+    background-color: black;
+}
+
+.NavbarButtons.dark button {
+    box-shadow: 0 0 6px rgba(0, 0, 0, 1);
+    background-color: #333;
+    color: white;
+}
+
+.GetStarted {
+    text-decoration: none;
+    color: black;
+}
+
+.GetStarted.dark {
+    color: white;
+}
+
+.ProfileBtn {
+    text-decoration: none;
+    color: #222;
+    font-size: 18px;
+    padding: 2px 0px;
+}
+
+.ProfileBtn.dark {
+    text-decoration: none;
+    color: white;
+}
+
+.ProfileBtnPremium {
+    text-decoration: none;
+    color: goldenrod;
+    font-size: 18px;
+    padding: 2px 0px;
+}
+
+.StreaksContainer {
+    display: flex;
+    flex-direction: row;
+}
+
+.CurrentStreaks {
+    font-size: 15px;
+    color: darkorange;
+    align-self: center;
+}
+
+.CreditPointsContainer {
+    display: flex;
+    flex-direction: row;
+    gap: 1px;
+}
+
+.CreditPoints {
+    padding-top: 2px;
+    font-size: 15px;
+    align-self: center;
+}

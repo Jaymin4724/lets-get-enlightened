@@ -1,0 +1,50 @@
+.QuestionsMainContainer {
+  background-color: #ffffff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  border-radius: 10px;
+  width: 90%;
+  margin: auto;
+  margin-top: 50px;
+  display: flex;
+  flex-direction: column;
+}
+
+.QuestionsMainContainer.dark {
+  background-color: whitesmoke;
+}
+
+.QuestionsMainContainer h2 {
+  color: #111;
+  margin-bottom: 5px;
+  font-family: 'Josefin Sans', sans-serif;
+  font-weight: 700;
+}
+
+.QuestionsAnsContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: 10%;
+  font-size: large;
+  font-weight: 400;
+}
+
+.submitButton {
+  width: 12%;
+  font-size: 18px;
+  align-self: flex-end;
+  text-align: center;
+  text-decoration: none;
+  background-color: #333;
+  color: white;
+  border: none;
+  padding: 8px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.submitButton:hover {
+  background-color: black;
+}

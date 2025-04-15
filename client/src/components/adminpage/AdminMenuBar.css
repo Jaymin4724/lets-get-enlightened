@@ -1,0 +1,76 @@
+.AdminMenuBar {
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 999;
+    height: 100%;
+    background-color: white;
+    font-size: larger;
+}
+
+.AdminMenuButtons {
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    gap: 10px;
+    height: 100%;
+    padding: 10px;
+    padding-right: 20px;
+    padding-top: 37%;
+    background-color: whitesmoke;
+    /* for admin panel */
+    /* background-color: #F9F6F1; */
+}
+
+.AdminMenuButtons.dark {
+    /* for admin panel */
+    /* background-color:#5E604B; */
+    background-color: #222;
+}
+
+.AdminMenuButton {
+    color: black;
+    cursor: pointer;
+    transition: all ease 0.5s;
+    padding: 5px 12px;
+    font-family: 'Poppins', sans-serif;
+    text-decoration: none;
+}
+
+.AdminMenuButton.dark {
+    color: white;
+}
+
+.AdminMenuButton:hover {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    background-color: #222;
+    color: white;
+    /* for admin page */
+    /* background-color: #5E604B; */
+    /* color:white; */
+}
+
+.AdminMenuButton.dark:hover {
+    background-color: #333;
+    color: white;
+    /* for admin page */
+    /* background-color: #B3B792; */
+    /* color: black; */
+}
+
+.AdminMenuButton.active {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    background-color: #222;
+    color: white;
+    /* for admin page */
+    /* background-color: #5E604B; */
+    /* color:white; */
+}
+
+.AdminMenuButton.dark.active {
+    background-color: #333;
+    color: white;
+    /* for admin page */
+    /* background-color: #B3B792; */
+    /* color: black; */
+}
