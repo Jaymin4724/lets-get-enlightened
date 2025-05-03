@@ -9,11 +9,12 @@ import { toast } from "react-hot-toast";
 
 export default function LoginPage() {
   const themeContext = useContext(ThemeContext);
-  const { adminLogin, login } = useContext(AuthContext);
+  const { adminLogin, login } = useContext(AuthContext); // Use login from AuthContext
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
   const navigate = useNavigate();
+
   const toggleShowPassword = () => {
     setShowPassword(!showPassword);
   };
@@ -65,33 +66,19 @@ export default function LoginPage() {
           color: "white",
         },
       });
-      adminLogin();
+      adminLogin(); // Call adminLogin for admin users
       navigate("/admin/dashboard");
       return;
     }
 
-    axios
-      .post("http://localhost:8000/api/login", {
+    try {
+      const response = await axios.post("http://localhost:8000/api/login", {
         email,
         password,
-      })
-      .then((response) => {
-        console.log(response.data);
-        if (response.status === 200) {
-          toast.success(`User login successful!`, {
-            duration: 3000,
-            position: "top-center",
-            style: {
-              backgroundColor: "#333",
-              color: "white",
-            },
-          });
-          login(response.data); // Log in the user
-          navigate("/"); // Navigate to the home page
-        }
-      })
-      .catch(() => {
-        toast.error("Email address not found!", {
+      });
+
+      if (response.status === 200) {
+        toast.success(`User login successful!`, {
           duration: 3000,
           position: "top-center",
           style: {
@@ -99,7 +86,21 @@ export default function LoginPage() {
             color: "white",
           },
         });
+
+        // Call login with user data to persist it
+        login(response.data); // Pass the user data to the login function
+        navigate("/"); // Navigate to the home page
+      }
+    } catch (error) {
+      toast.error("Email address not found!", {
+        duration: 3000,
+        position: "top-center",
+        style: {
+          backgroundColor: "#333",
+          color: "white",
+        },
       });
+    }
   };
 
   return (

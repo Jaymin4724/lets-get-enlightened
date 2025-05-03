@@ -3,31 +3,47 @@ import React, { createContext, useState, useEffect } from "react";
 const AuthContext = createContext();
 
 const AuthProvider = ({ children }) => {
-  const [isLoggedIn, setLoggedIn] = useState(false);
-  const [isAdminLoggedIn, setAdminLoggedIn] = useState(false);
-  const [userData, setUserData] = useState(null); // Add userData state
+  const [isLoggedIn, setLoggedIn] = useState(() => {
+    return JSON.parse(localStorage.getItem("isLoggedIn")) || false;
+  });
+  const [isAdminLoggedIn, setAdminLoggedIn] = useState(() => {
+    return JSON.parse(localStorage.getItem("isAdminLoggedIn")) || false;
+  });
+  const [userData, setUserData] = useState(() => {
+    return JSON.parse(localStorage.getItem("userData")) || null;
+  });
 
   const login = (data) => {
     setLoggedIn(true);
-    setUserData(data); // Set user data when logging in
+    setUserData(data);
+    localStorage.setItem("isLoggedIn", true);
+    localStorage.setItem("userData", JSON.stringify(data));
   };
 
   const logout = () => {
     setLoggedIn(false);
-    setUserData(null); // Clear user data when logging out
+    setUserData(null);
+    localStorage.removeItem("isLoggedIn");
+    localStorage.removeItem("userData");
   };
 
   const adminLogin = () => {
     setAdminLoggedIn(true);
+    localStorage.setItem("isAdminLoggedIn", true);
   };
 
   const adminLogout = () => {
     setAdminLoggedIn(false);
+    localStorage.removeItem("isAdminLoggedIn");
   };
 
   useEffect(() => {
-    console.log("userData:", userData);
-  }, [userData]); // Log userData whenever it changes
+    localStorage.setItem("isLoggedIn", isLoggedIn);
+    localStorage.setItem("isAdminLoggedIn", isAdminLoggedIn);
+    if (userData) {
+      localStorage.setItem("userData", JSON.stringify(userData));
+    }
+  }, [isLoggedIn, isAdminLoggedIn, userData]);
 
   return (
     <AuthContext.Provider
@@ -38,8 +54,8 @@ const AuthProvider = ({ children }) => {
         isLoggedIn,
         login,
         logout,
-        userData, // Add userData to the context value
-        setUserData, // Add setUserData to the context value
+        userData,
+        setUserData,
       }}
     >
       {children}
