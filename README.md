@@ -11,7 +11,7 @@ url : https://drive.google.com/file/d/1di7Swxdjp7WC0NWIsZhIKzRKo6KiJWZY/view?usp
 
 ---
 
-## 🛠️ Tech Stack
+## Tech Stack
 
 - **Frontend**: React, Vite, Recharts, Axios, React Hot Toast
 - **Backend**: Node.js, Express.js, MongoDB, Mongoose
@@ -20,7 +20,7 @@ url : https://drive.google.com/file/d/1di7Swxdjp7WC0NWIsZhIKzRKo6KiJWZY/view?usp
 
 ---
 
-## 🌟 Features
+## Features
 
 - **User Registration & Authentication**: Secure sign-up, login, and profile management.
 - **Meditation Library**: Access a variety of meditation types and track your sessions.
