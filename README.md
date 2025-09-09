@@ -88,7 +88,14 @@ CodeBase_LGE_latest!
 		 npm install
 		 ```
 3. **Set up environment variables:**
-	 - Create a `.env` file in the `server` folder with your MongoDB URI and any secrets.
+	 - **Backend (`server`):**
+		 - Create a `.env` file inside the `server` folder with the following content (replace values as needed):
+			 ```env
+			 PORT=8000
+			 MONGOURL="<your-mongodb-uri>"
+			 EMAIL_USERNAME="<your-email-address>"
+			 EMAIL_PASSWORD="<your-app-password>"
+			 ```
 
 4. **Run the app:**
 	 - Start backend:
